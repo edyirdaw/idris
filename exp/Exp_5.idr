@@ -10,6 +10,12 @@ getStringOrInt x = case x of
                         True => 94
                         False => "Ninety four"
 
+getStringOrIntH : (x : Bool) -> StringOrInt x
+getStringOrIntH x = case x of
+                        True => ?HI
+                        False => "Ninety four"
+
+
 valToString : (x : Bool) -> StringOrInt x -> String
 valToString x val = case x of
                         True => cast val
