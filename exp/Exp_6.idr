@@ -22,3 +22,13 @@ addTwo = add 2
 -- do addTwo_2 4 5, you will get 7.0
 addTwo_2 : Double -> (Double -> Double)
 addTwo_2 x = add 2
+
+identityInt : Int -> Int
+identityInt x = x
+
+identity : ty -> ty
+identity x = x
+
+-- Below code doesnt work.
+-- thec : (ty : Type) -> ty1 -> ty
+-- thec ty x = x
