@@ -32,3 +32,10 @@ identity x = x
 -- Below code doesnt work.
 -- thec : (ty : Type) -> ty1 -> ty
 -- thec ty x = x
+
+doubleg : Num ty => ty -> ty
+doubleg x = x + x
+
+-- Below code doenst work since Double is not an interface
+-- doubled : Double ty => ty -> ty
+-- doubled x = x + x
