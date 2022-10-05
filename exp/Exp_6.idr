@@ -39,3 +39,26 @@ doubleg x = x + x
 -- Below code doenst work since Double is not an interface
 -- doubled : Double ty => ty -> ty
 -- doubled x = x + x
+
+f1 : Int -> Int -> Int
+f1 x y = x * 2 + y
+
+-- exquisitely uncurrying f1 ;)
+f1u : (Int, Int) -> Int
+f1u (x, y) = f1 x y
+
+-- creating uncurried functions using tuples
+f1t : (Int, Int) -> Int
+f1t (x, y) = x * 2 + y
+
+-- f1un : uncurry f1 -- doesnt work
+f1un : (Int, Int) -> Int
+f1un = uncurry f1
+
+f2 : Int -> Int -> Int -> Int
+f2 x y z = x * 2 + y * z + 1
+
+-- undesirable uncurrying where the first two
+-- parameters are tuppled together
+f2un : ((Int, Int) , Int) -> Int
+f2un = uncurry (uncurry f2)
