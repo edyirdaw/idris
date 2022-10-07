@@ -33,6 +33,16 @@ identity x = x
 -- thec : (ty : Type) -> ty1 -> ty
 -- thec ty x = x
 
+thed : (ty : Type) -> ty -> ty
+thed ty x = x
+
+-- Doesnt work as thed does since it doensnt label the first argument
+thee : ty -> ty -> ty
+thee ty x = x
+
+-- a : Integer
+-- a = 2
+
 doubleg : Num ty => ty -> ty
 doubleg x = x + x
 
@@ -42,6 +52,9 @@ doubleg x = x + x
 
 f1 : Int -> Int -> Int
 f1 x y = x * 2 + y
+
+f3 : a -> a -> a
+f3 x y = x
 
 -- exquisitely uncurrying f1 ;)
 f1u : (Int, Int) -> Int
@@ -62,3 +75,26 @@ f2 x y z = x * 2 + y * z + 1
 -- parameters are tuppled together
 f2un : ((Int, Int) , Int) -> Int
 f2un = uncurry (uncurry f2)
+
+doub : Num a => a -> a
+doub x = 2 * x
+
+quadruple : Num a => a -> a
+quadruple x = doub (doub x)
+
+Shape : Type
+rotate : Shape -> Shape
+
+rectangle : Shape
+
+twice : (a -> a) -> a -> a
+twice f x = f (f x)
+
+turn_around : Shape -> Shape
+turn_around = twice rotate
+
+quad : Num a => a -> a
+quad = twice doub
+
+diff : ty -> ty -> ty
+diff x y = x
