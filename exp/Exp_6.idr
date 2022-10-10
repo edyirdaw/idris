@@ -98,3 +98,9 @@ quad = twice doub
 
 diff : ty -> ty -> ty
 diff x y = x
+
+-- To check that the order of the types in type declaration matches that
+-- of the order of the variables in the function definition.
+fun1 : Int -> Double -> Double
+fun1 x y =  cast x + 2 * y
+
