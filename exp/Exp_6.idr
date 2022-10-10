@@ -104,3 +104,13 @@ diff x y = x
 fun1 : Int -> Double -> Double
 fun1 x y =  cast x + 2 * y
 
+longer : String -> String -> String
+longer word1 word2 =
+    let len1 = length word1
+        len2 = length word2
+        in if len1 > len2 then word1 ++ "-" ++ cast len1 else word2 ++ "-" ++ cast len2
+
+hyp : Double -> Double -> Double
+hyp x y = sqrt (square x + square y)
+    where square : Double -> Double
+          square x = x * x
