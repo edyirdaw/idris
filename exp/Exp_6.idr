@@ -114,3 +114,8 @@ hyp : Double -> Double -> Double
 hyp x y = sqrt (square x + square y)
     where square : Double -> Double
           square x = x * x
+
+{- to test that fst pair outputs 1. This is not so in the repl when
+pair is defined using :let -}
+pair : (Int, Int)
+pair = (1,2)
